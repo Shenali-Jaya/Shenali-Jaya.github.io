@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Evolution Pathways — Marketing Product Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ot-navy: #003C71;
+  --ot-blue: #0077C8;
+  --ot-gold: #FFB81C;
+  --ot-light: #E8F4FD;
+  --ot-dark: #001B33;
+  --li-blue: #0A66C2;
+  --li-bg: #F4F2EE;
+  --ig-pink: #E1306C;
+  --ig-purple: #833AB4;
+  --ig-orange: #F77737;
+  --card-radius: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(175deg, var(--ot-navy) 0%, #001530 40%, #0a1628 100%);
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  text-align:center;
+  padding: 60px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute;
+  top:-60%;left:-20%;
+  width:140%;height:200%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,119,200,.18) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero .badge {
+  display:inline-block;
+  background: var(--ot-gold);
+  color: var(--ot-dark);
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:6px 18px;
+  border-radius:40px;
+  margin-bottom:20px;
+}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size: clamp(28px,5vw,52px);
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:12px;
+  background: linear-gradient(135deg, #fff 30%, var(--ot-gold) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero p {
+  max-width:640px;
+  margin:0 auto;
+  font-size:15px;
+  color:rgba(255,255,255,.7);
+  line-height:1.6;
+}
+.pillars-strip {
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.pill {
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  padding:8px 18px;
+  border-radius:40px;
+  font-size:12px;
+  font-weight:600;
+  color:var(--ot-gold);
+  letter-spacing:.5px;
+}
+
+/* ── SECTION WRAPPERS ── */
+.section {
+  max-width:960px;
+  margin:0 auto;
+  padding:50px 20px;
+}
+.section-label {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:28px;
+}
+.section-label .icon {
+  width:44px;height:44px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  flex-shrink:0;
+}
+.section-label h2 {
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+}
+.section-label small {
+  display:block;
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;
+  font-weight:500;
+  color:rgba(255,255,255,.5);
+  margin-top:2px;
+}
+
+/* ── LINKEDIN MOCKUP ── */
+.li-page {
+  background: var(--li-bg);
+  border-radius: var(--card-radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  color:#000;
+}
+.li-banner {
+  height:110px;
+  background: linear-gradient(135deg, var(--ot-navy), var(--ot-blue));
+  position:relative;
+}
+.li-avatar {
+  width:88px;height:88px;
+  border-radius:50%;
+  border:4px solid #fff;
+  background:var(--ot-navy);
+  position:absolute;
+  bottom:-44px;left:28px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;font-weight:800;color:var(--ot-gold);
+  font-family:'Playfair Display',serif;
+}
+.li-header {
+  padding:52px 28px 18px;
+}
+.li-header h3 { font-size:20px;font-weight:700;color:#000; }
+.li-header .tagline { font-size:13px;color:#666;margin-top:2px; }
+.li-header .followers { font-size:12px;color:var(--li-blue);margin-top:6px;font-weight:600; }
+.li-tabs {
+  display:flex;
+  gap:0;
+  border-top:1px solid #ddd;
+  border-bottom:2px solid transparent;
+}
+.li-tabs span {
+  padding:12px 20px;
+  font-size:13px;
+  font-weight:600;
+  color:#666;
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  margin-bottom:-2px;
+}
+.li-tabs span.active { color:var(--li-blue);border-bottom-color:var(--li-blue); }
+
+/* Post cards */
+.li-post {
+  background:#fff;
+  margin:12px;
+  border-radius:8px;
+  padding:18px;
+  border:1px solid #e8e8e8;
+}
+.li-post-header {
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin-bottom:12px;
+}
+.li-post-avatar {
+  width:44px;height:44px;
+  border-radius:50%;
+  background:var(--ot-navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:800;color:var(--ot-gold);
+  font-family:'Playfair Display',serif;
+  flex-shrink:0;
+}
+.li-post-meta strong { font-size:13px;display:block;color:#000; }
+.li-post-meta span { font-size:11px;color:#888; }
+.li-post p { font-size:13px;line-height:1.55;color:#333;margin-bottom:12px; }
+.li-post-img {
+  width:100%;
+  border-radius:6px;
+  aspect-ratio:16/9;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:600;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  line-height:1.4;
+}
+.li-post-actions {
+  display:flex;
+  gap:20px;
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid #eee;
+}
+.li-post-actions span { font-size:12px;color:#666;font-weight:500; }
+
+/* ── INSTAGRAM MOCKUP ── */
+.ig-phone {
+  width:340px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.3);
+  color:#000;
+}
+.ig-status-bar {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  font-size:11px;
+  padding:6px;
+  font-weight:600;
+}
+.ig-nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 16px;
+  border-bottom:1px solid #eee;
+}
+.ig-nav .name { font-weight:700;font-size:15px; }
+.ig-profile {
+  padding:16px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+.ig-profile-pic {
+  width:72px;height:72px;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--ig-purple), var(--ig-pink), var(--ig-orange));
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.ig-profile-pic-inner {
+  width:66px;height:66px;
+  border-radius:50%;
+  background:var(--ot-navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;font-weight:800;color:var(--ot-gold);
+  font-family:'Playfair Display',serif;
+  border:3px solid #fff;
+}
+.ig-stats { display:flex;gap:20px;text-align:center; }
+.ig-stats div strong { display:block;font-size:16px; }
+.ig-stats div span { font-size:11px;color:#888; }
+.ig-bio { padding:0 16px 14px;font-size:12px;line-height:1.5;color:#333; }
+.ig-bio strong { display:block;font-size:13px;color:#000;margin-bottom:2px; }
+.ig-edit-btn {
+  margin:0 16px 14px;
+  display:block;
+  text-align:center;
+  background:#EFEFEF;
+  border-radius:8px;
+  padding:7px;
+  font-size:12px;
+  font-weight:600;
+  color:#222;
+}
+.ig-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.ig-grid-item {
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:600;
+  color:#fff;
+  text-align:center;
+  padding:6px;
+  line-height:1.3;
+}
+
+/* ── WEBINAR MOCKUP ── */
+.webinar-card {
+  background: linear-gradient(145deg, #0a1a30 0%, var(--ot-navy) 50%, #002952 100%);
+  border-radius: var(--card-radius);
+  overflow:hidden;
+  box-shadow: 0 8px 40px rgba(0,119,200,.15);
+  border:1px solid rgba(255,255,255,.08);
+}
+.webinar-top {
+  padding:36px 32px 0;
+  position:relative;
+}
+.webinar-top .live-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,77,77,.15);
+  color:#ff6b6b;
+  font-size:11px;
+  font-weight:700;
+  padding:5px 14px;
+  border-radius:40px;
+  letter-spacing:.5px;
+  margin-bottom:18px;
+}
+.webinar-top .live-badge::before {
+  content:'';
+  width:7px;height:7px;
+  border-radius:50%;
+  background:#ff4d4d;
+  animation: pulse 1.4s ease infinite;
+}
+@keyframes pulse {
+  0%,100%{opacity:1;} 50%{opacity:.3;}
+}
+.webinar-top h3 {
+  font-family:'Playfair Display',serif;
+  font-size:24px;
+  font-weight:700;
+  line-height:1.25;
+  color:#fff;
+  margin-bottom:8px;
+}
+.webinar-top .subtitle { font-size:14px;color:rgba(255,255,255,.6);line-height:1.5; }
+.webinar-details {
+  display:flex;
+  gap:28px;
+  padding:24px 32px;
+  flex-wrap:wrap;
+}
+.webinar-detail {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.webinar-detail .wd-icon {
+  width:38px;height:38px;
+  border-radius:10px;
+  background:rgba(255,184,28,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+.webinar-detail .wd-text { font-size:12px; }
+.webinar-detail .wd-text strong { display:block;font-size:14px;color:#fff; }
+.webinar-detail .wd-text span { color:rgba(255,255,255,.5); }
+.webinar-speakers {
+  padding:0 32px 28px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.speaker {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  padding:10px 16px;
+}
+.speaker-pic {
+  width:40px;height:40px;
+  border-radius:50%;
+  background:var(--ot-blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:700;color:#fff;
+}
+.speaker-info strong { font-size:13px;display:block;color:#fff; }
+.speaker-info span { font-size:11px;color:rgba(255,255,255,.5); }
+.webinar-cta {
+  padding:0 32px 32px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn-primary {
+  background:var(--ot-gold);
+  color:var(--ot-dark);
+  font-weight:700;
+  font-size:14px;
+  padding:14px 32px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  letter-spacing:.3px;
+}
+.btn-outline {
+  background:transparent;
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  padding:14px 32px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.2);
+  cursor:pointer;
+}
+
+/* ── LAYOUT HELPERS ── */
+.two-col {
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:32px;
+  align-items:start;
+}
+@media(max-width:760px){
+  .two-col { grid-template-columns:1fr; }
+  .ig-phone { width:100%;max-width:340px; }
+}
+
+.divider {
+  width:60px;
+  height:3px;
+  background: linear-gradient(90deg, var(--ot-gold), var(--ot-blue));
+  border-radius:4px;
+  margin:60px auto;
+}
+
+.footer {
+  text-align:center;
+  padding:40px 20px 60px;
+  font-size:11px;
+  color:rgba(255,255,255,.3);
+  letter-spacing:.5px;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Section 5 — Marketing Product Concept</div>
+  <h1>Career Evolution<br>Pathways</h1>
+  <p>A targeted marketing strategy for Ontario Tech Continuous Learning — attracting mid-career alumni and professionals exploring reskilling and career growth opportunities.</p>
+  <div class="pillars-strip">
+    <span class="pill">1 · Awareness</span>
+    <span class="pill">2 · Engagement</span>
+    <span class="pill">3 · Conversion</span>
+    <span class="pill">4 · Retention</span>
+  </div>
+</div>
+
+<!-- ═══════════════ LINKEDIN ═══════════════ -->
+<div class="section">
+  <div class="section-label">
+    <div class="icon" style="background:rgba(10,102,194,.15);color:var(--li-blue);">in</div>
+    <div>
+      <h2>LinkedIn — Organic Presence</h2>
+      <small>PILLAR 1 & 2 · "Career Evolution Stories" series + LinkedIn Events</small>
+    </div>
+  </div>
+
+  <div class="li-page">
+    <div class="li-banner">
+      <div class="li-avatar">OT</div>
+    </div>
+    <div class="li-header">
+      <h3>Ontario Tech Continuous Learning</h3>
+      <div class="tagline">Career Evolution Pathways · Reskilling for Ontario's future workforce</div>
+      <div class="followers">4,812 followers · University</div>
+    </div>
+    <div class="li-tabs">
+      <span>Home</span>
+      <span class="active">Posts</span>
+      <span>About</span>
+      <span>Events</span>
+    </div>
+
+    <!-- Post 1: Alumni Story -->
+    <div class="li-post">
+      <div class="li-post-header">
+        <div class="li-post-avatar">OT</div>
+        <div class="li-post-meta">
+          <strong>Ontario Tech Continuous Learning</strong>
+          <span>2d · 🌐</span>
+        </div>
+      </div>
+      <p><strong>🚀 Career Evolution Story #14</strong><br><br>After 8 years as a mechanical technician, Priya M. enrolled in our Nuclear Career Accelerator — and within 6 months landed a Project Coordinator role at OPG.<br><br>"I didn't think career changes were possible at 34. Ontario Tech proved me wrong."<br><br>👉 Ready to explore your path? Link in comments.<br><br>#CareerEvolution #OntarioTech #NuclearCareers #LifelongLearning #Reskilling</p>
+      <div class="li-post-img" style="background:linear-gradient(135deg,var(--ot-navy),var(--ot-blue));">
+        <div>
+          <div style="font-size:32px;margin-bottom:8px;">🎯</div>
+          <div style="font-size:18px;">Priya's Career Evolution</div>
+          <div style="font-size:12px;opacity:.7;margin-top:4px;">Mechanical Technician → Project Coordinator @ OPG</div>
+        </div>
+      </div>
+      <div class="li-post-actions">
+        <span>👍 142</span>
+        <span>💬 23 comments</span>
+        <span>🔄 18 reposts</span>
+      </div>
+    </div>
+
+    <!-- Post 2: Event / Webinar -->
+    <div class="li-post">
+      <div class="li-post-header">
+        <div class="li-post-avatar">OT</div>
+        <div class="li-post-meta">
+          <strong>Ontario Tech Continuous Learning</strong>
+          <span>5d · 🌐</span>
+        </div>
+      </div>
+      <p>📅 <strong>FREE LinkedIn Event — Register Now</strong><br><br>Is It Time for a Career Change? Join our monthly Career Exploration Webinar this Thursday at 12 PM ET.<br><br>We'll cover skills-gap assessment, funding options (did you know your employer may cover 100% of PD costs?), and live Q&A with our career advisor.<br><br>🔗 Register via the LinkedIn Event link below ↓<br><br>#FreeWebinar #CareerExploration #CEP</p>
+      <div class="li-post-img" style="background:linear-gradient(135deg,#1a1a3e,var(--ot-navy));">
+        <div>
+          <div style="font-size:11px;letter-spacing:2px;opacity:.6;margin-bottom:8px;">FREE WEBINAR · LINKEDIN EVENT</div>
+          <div style="font-size:18px;line-height:1.3;">Is It Time for a<br>Career Change?</div>
+          <div style="font-size:12px;margin-top:10px;opacity:.7;">Thursday May 14 · 12:00 PM ET</div>
+        </div>
+      </div>
+      <div class="li-post-actions">
+        <span>👍 87</span>
+        <span>💬 11 comments</span>
+        <span>🔄 32 reposts</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ INSTAGRAM ═══════════════ -->
+<div class="section">
+  <div class="section-label">
+    <div class="icon" style="background:linear-gradient(135deg,rgba(131,58,180,.15),rgba(225,48,108,.15));color:var(--ig-pink);">📷</div>
+    <div>
+      <h2>Instagram — @OTCareerServices</h2>
+      <small>PILLAR 1 · Reels, career stories & alumni spotlights (new dedicated account)</small>
+    </div>
+  </div>
+
+  <div class="ig-phone">
+    <div class="ig-status-bar">9:41</div>
+    <div class="ig-nav">
+      <span style="font-size:18px;">←</span>
+      <span class="name">otcareerservices</span>
+      <span style="font-size:18px;">⋯</span>
+    </div>
+    <div class="ig-profile">
+      <div class="ig-profile-pic">
+        <div class="ig-profile-pic-inner">OT</div>
+      </div>
+      <div class="ig-stats">
+        <div><strong>47</strong><span>Posts</span></div>
+        <div><strong>2.1K</strong><span>Followers</span></div>
+        <div><strong>186</strong><span>Following</span></div>
+      </div>
+    </div>
+    <div class="ig-bio">
+      <strong>Ontario Tech Career Services</strong>
+      🎯 Your Career Evolution starts here<br>
+      📍 Oshawa, ON<br>
+      🔗 ontariotech.ca/cep<br>
+      <span style="color:var(--li-blue);">#CareerEvolutionPathways</span>
+    </div>
+    <div class="ig-edit-btn">Follow</div>
+    <div class="ig-grid">
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,var(--ot-navy),var(--ot-blue));">🎬<br>REEL<br>Priya's Story</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#2d1b4e,#833AB4);">📊<br>Skills Gap<br>Assessment</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#1a3a2a,#2ecc71);">💼<br>OPG Hiring<br>Nuclear Roles</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#3a1b1b,#e74c3c);">🎬<br>REEL<br>Webinar Recap</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,var(--ot-navy),#0057a0);">🗓<br>Free Webinar<br>May 14</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#2a2a0a,var(--ot-gold));color:#000;">✅<br>Alumni<br>Testimonial</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#1a1a3e,#5b6abf);">📈<br>Career Stats<br>Carousel</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#0d2137,var(--ot-blue));">🎯<br>Where Could<br>You Be?</div>
+      <div class="ig-grid-item" style="background:linear-gradient(135deg,#2d1b4e,#9b59b6);">🎬<br>REEL<br>Day in the Life</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ WEBINAR ═══════════════ -->
+<div class="section">
+  <div class="section-label">
+    <div class="icon" style="background:rgba(255,184,28,.12);color:var(--ot-gold);">🎥</div>
+    <div>
+      <h2>Career Exploration Webinar</h2>
+      <small>PILLAR 2 · Free monthly webinar — "Is It Time for a Career Change?"</small>
+    </div>
+  </div>
+
+  <div class="webinar-card">
+    <div class="webinar-top">
+      <div class="live-badge">UPCOMING · FREE EVENT</div>
+      <h3>Is It Time for a<br>Career Change?</h3>
+      <div class="subtitle">Explore reskilling pathways, uncover skills gaps, and learn how Ontario Tech's Continuous Learning programs can accelerate your next chapter.</div>
+    </div>
+    <div class="webinar-details">
+      <div class="webinar-detail">
+        <div class="wd-icon">📅</div>
+        <div class="wd-text">
+          <strong>May 14, 2026</strong>
+          <span>Thursday</span>
+        </div>
+      </div>
+      <div class="webinar-detail">
+        <div class="wd-icon">🕐</div>
+        <div class="wd-text">
+          <strong>12:00 – 1:00 PM ET</strong>
+          <span>60 minutes + Q&A</span>
+        </div>
+      </div>
+      <div class="webinar-detail">
+        <div class="wd-icon">💰</div>
+        <div class="wd-text">
+          <strong>Free</strong>
+          <span>Open to all professionals</span>
+        </div>
+      </div>
+    </div>
+    <div class="webinar-speakers">
+      <div class="speaker">
+        <div class="speaker-pic">CS</div>
+        <div class="speaker-info">
+          <strong>Christopher S.</strong>
+          <span>Career Services Lead · OT</span>
+        </div>
+      </div>
+      <div class="speaker">
+        <div class="speaker-pic">PM</div>
+        <div class="speaker-info">
+          <strong>Priya M.</strong>
+          <span>Alumni · Nuclear Career Accelerator</span>
+        </div>
+      </div>
+    </div>
+    <div class="webinar-cta">
+      <button class="btn-primary">Register Now — Free</button>
+      <button class="btn-outline">Add to Calendar</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Ontario Tech University · Continuous Learning · Career Evolution Pathways (CEP) · Capstone 2026<br>
+  Prepared by Daniel Nesci · Aiden Devries · Shenali Jayasooriya
+</div>
+
+</body>
+</html>
